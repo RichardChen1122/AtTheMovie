@@ -1,12 +1,19 @@
 ﻿@section scripts{
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
     <script src="~/Client/atTheMovies.js"></script>
     <script src="~/Client/ListController.js"></script>
+
 }
 
 <div ng-app="atTheMovies">
     <div ng-controller="ListController">
-        {{message}}
+
+        <table>
+            <tr ng-repeat="movie in movies">
+                <td>{{movie.Title}}</td>
+            </tr>
+        </table>
     </div>
 </div>
 <div class="jumbotron">

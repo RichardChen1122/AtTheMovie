@@ -1,6 +1,10 @@
 ﻿(function (app) {
-    var ListController = function ($scope) {
-        $scope.message = "HelloWorld!";
+    var ListController = function ($scope, $http) {
+        $http.get("api/movies").success(function (data) {
+            $scope.movies = data;
+        });
     };
+    ListController.$inject = ["$scope", "$http"];
+
     app.controller("ListController", ListController);
 }(angular.module("atTheMovies")));
